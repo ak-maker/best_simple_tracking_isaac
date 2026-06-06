@@ -1,0 +1,45 @@
+# Params copied from RL_Active best_simple_reward branch.
+# Action scaling in policy_net_att.py (linear *1.0, angular *pi/6) matches
+# these FoV / motion settings.
+
+max_num_landmarks: 7
+num_landmarks: 5
+horizon: 50
+env_width: 10
+env_height: 10
+tau: 1.0
+
+motion:
+  A:
+    _1: 1
+    _2: 1
+  B:
+    _1: 1
+    _2: 1
+  W:
+    _1: 0.005
+    _2: 0.005
+  landmark_motion_scale: 0.3
+
+init_info: 0.001
+
+FoV:
+  radius: 3
+  psi: 0.5235987755982988   # pi / 6
+  kappa: 1.0
+  V:
+    _1: 0.01
+    _2: 0.01
+
+lr: 0.0003
+max_epoch: 2000
+batch_size: 20
+num_test_trials: 20
+
+# Multi-robot setting (2 trackers).
+num_robots: 2
+
+# Reward weights — HRA: persistence + info_gain.
+reward_weights:
+  persistence: 1.0
+  info_gain: 0.5
