@@ -47,14 +47,12 @@ new `mu_real` once per env step; no PhysX integration between updates.
 1. **Isaac Sim 4.5+** (recommended pip-install path).
 2. **Isaac Lab** (https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html)
    — clone and install per their docs.
-3. A trained Go2 rough-terrain locomotion policy (`.pt` JIT). Either:
-   - train one yourself via Isaac Lab's
-     `train.py --task Isaac-Velocity-Rough-Unitree-Go2-v0`, or
-   - use the policy file shipped with Isaac Lab's RL-zoo examples.
 
-Update `DEFAULT_GO2_POLICY` in
-`best_simple_tracking/isaac_env/managed_tracking_env.py` (line ~40) to point
-at your `.pt` file, OR pass `locomotion_policy_path=...` to `TrackingEnv`.
+A trained Go2 rough-terrain locomotion policy (`go2_locomotion.pt`, JIT
+TorchScript, ~1.2 MB) is **bundled** in `best_simple_tracking/assets/`.
+`TrackingEnv` loads it by default. To use your own, pass
+`locomotion_policy_path=/path/to/your/policy.pt` to `TrackingEnv`, or use
+the `--locomotion-policy` CLI flag in the training / evaluation scripts.
 
 ## Install
 

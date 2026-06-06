@@ -43,8 +43,10 @@ import isaaclab_tasks  # noqa: F401
 
 from best_simple_tracking.isaac_env.managed_env_cfg import ActiveTrackingManagedEnvCfg
 
-DEFAULT_GO2_POLICY = (
-    "/path/to/IsaacLab/logs/rsl_rl/unitree_go2_rough/exported/policy.pt"
+# Default Go2 locomotion policy — bundled with the package, see assets/.
+DEFAULT_GO2_POLICY = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..", "assets", "go2_locomotion.pt",
 )
 
 

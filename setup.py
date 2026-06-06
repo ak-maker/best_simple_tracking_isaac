@@ -10,6 +10,7 @@ setup(
         "best_simple_tracking": [
             "assets/*.usd",
             "assets/*.urdf",
+            "assets/*.pt",
             "params/*.yaml",
         ],
     },
